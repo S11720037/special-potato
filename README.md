@@ -2,7 +2,7 @@
 
 ---
 
-### Send Message
+## Send Message
 
 ---
 
@@ -40,7 +40,7 @@ curl --location --request POST 'https://special-potato.tendean.my.id/core/' \
 
 ---
 
-# Get Message from Room
+## Get Message from Room
 
 ```bash
 curl --location --request GET 'http://special-potato.tendean.my.id/core/?room_name=alpha' \
@@ -70,3 +70,9 @@ curl --location --request GET 'http://special-potato.tendean.my.id/core/?room_na
   }
 }
 ```
+
+## Screenshots (Postman)
+
+- https://cdn.discordapp.com/attachments/858938620425404426/1010621261799489686/unknown.png
+- https://cdn.discordapp.com/attachments/858938620425404426/1010621295278428170/unknown.png
+- https://cdn.discordapp.com/attachments/858938620425404426/1010621323187327067/unknown.png
