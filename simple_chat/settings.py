@@ -78,11 +78,16 @@ WSGI_APPLICATION = "simple_chat.wsgi.application"
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
-DATABASES = {
+# 😜
+DATABASES = DATABASES = {
     "default": {
-        "ENGINE": "django.db.backends.sqlite3",
-        "NAME": BASE_DIR / "db.sqlite3",
-    }
+        "ENGINE": "django.db.backends.mysql",
+        "NAME": "special_potato",
+        "USER": "special_potato",
+        "PASSWORD": "6hMEXzXaMYCXhzx5",
+        "HOST": "127.0.0.1",
+        "OPTIONS": {"charset": "utf8mb4"},
+    },
 }
 
 
