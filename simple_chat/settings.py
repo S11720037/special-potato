@@ -23,11 +23,11 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = "django-insecure-!6j&obwj-n+2*y!#5(ly907*d)5egrsw@xdapv^$okvmi#=sn5"  # opsss.... 🤣🙃😜😝
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = [
-    # "*",
-    "special-potato.tendean.my.id"
+    "*",
+    # "special-potato.tendean.my.id",
 ]
 
 
@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     "core",
     "rest_framework",
+    "the_api",
 ]
 
 MIDDLEWARE = [
@@ -79,16 +80,24 @@ WSGI_APPLICATION = "simple_chat.wsgi.application"
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
 # 😜
-DATABASES = DATABASES = {
-    "default": {
-        "ENGINE": "django.db.backends.mysql",
-        "NAME": "special_potato",
-        "USER": "special_potato",
-        "PASSWORD": "6hMEXzXaMYCXhzx5",
-        "HOST": "127.0.0.1",
-        "OPTIONS": {"charset": "utf8mb4"},
-    },
-}
+if DEBUG == True:
+    DATABASES = {
+        "default": {
+            "ENGINE": "django.db.backends.sqlite3",
+            "NAME": BASE_DIR / "db.sqlite3",
+        }
+    }
+else:
+    DATABASES = {
+        "default": {
+            "ENGINE": "django.db.backends.mysql",
+            "NAME": "special_potato",
+            "USER": "special_potato",
+            "PASSWORD": "6hMEXzXaMYCXhzx5",
+            "HOST": "127.0.0.1",
+            "OPTIONS": {"charset": "utf8mb4"},
+        },
+    }
 
 
 # Password validation
@@ -130,6 +139,10 @@ USE_TZ = True
 STATIC_URL = "/static/"
 STATICFILES_DIRS = [BASE_DIR / "static"]
 STATIC_ROOT = "/www/wwwroot/special-potato.tendean.my.id/static/"
+
+MEDIA_DIR = BASE_DIR / "media"
+MEDIA_ROOT = MEDIA_DIR
+MEDIA_URL = "/media/"
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
